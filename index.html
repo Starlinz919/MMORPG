@@ -1,0 +1,385 @@
+pode criar regras mais simples mais completas, mais classes e fazer como um guia de regras:
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPG Mission System</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        .section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        
+        .race, .class {
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+            margin-bottom: 15px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+        }
+        
+        .character-sheet {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sistema de RPG Mission-Based</h1>
+    
+    <div class="section">
+        <h2>Raças Disponíveis</h2>
+        
+        <div class="race">
+            <h3>Humano</h3>
+            <p><strong>Bônus:</strong> +1 em todos os atributos</p>
+            <p><strong>Habilidade Racial:</strong> Versatilidade - Ganha 10% mais XP de todas as missões</p>
+        </div>
+        
+        <div class="race">
+            <h3>Elfo</h3>
+            <p><strong>Bônus:</strong> +2 Destreza, +1 Inteligência</p>
+            <p><strong>Habilidade Racial:</strong> Visão Noturna - 20% de bônus em missões noturnas</p>
+        </div>
+        
+        <div class="race">
+            <h3>Anão</h3>
+            <p><strong>Bônus:</strong> +2 Constituição, +1 Força</p>
+            <p><strong>Habilidade Racial:</strong> Resistência - 25% menos dano de ataques físicos</p>
+        </div>
+        
+        <div class="race">
+            <h3>Orc</h3>
+            <p><strong>Bônus:</strong> +3 Força, -1 Inteligência</p>
+            <p><strong>Habilidade Racial:</strong> Fúria - 15% mais dano quando abaixo de 50% de vida</p>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>Classes Principais</h2>
+        
+        <div class="class">
+            <h3>Guerreiro</h3>
+            <p><strong>Atributos Primários:</strong> Força, Constituição</p>
+            <p><strong>Habilidades Especiais:</strong></p>
+            <ul>
+                <li><strong>Investida (Nível 1):</strong> Ataque poderoso com chance de atordoar</li>
+                <li><strong>Postura Defensiva (Nível 3):</strong> Reduz dano recebido em 30%</li>
+                <li><strong>Grito de Guerra (Nível 5):</strong> Aumenta ataque do grupo em 15% por 3 turnos</li>
+            </ul>
+            
+            <h4>Progressão do Guerreiro</h4>
+            <table>
+                <tr>
+                    <th>Nível</th>
+                    <th>Habilidade Desbloqueada</th>
+                    <th>Bônus de Atributo</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Investida</td>
+                    <td>+2 Força</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Postura Defensiva</td>
+                    <td>+1 Força, +1 Constituição</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Grito de Guerra</td>
+                    <td>+2 Força</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>Mestre de Armas</td>
+                    <td>+3 Força, +1 Destreza</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="class">
+            <h3>Mago</h3>
+            <p><strong>Atributos Primários:</strong> Inteligência, Sabedoria</p>
+            <p><strong>Habilidades Especiais:</strong></p>
+            <ul>
+                <li><strong>Bola de Fogo (Nível 1):</strong> Ataque mágico de fogo</li>
+                <li><strong>Escudo Arcano (Nível 3):</strong> Absorve 50 pontos de dano</li>
+                <li><strong>Nevasca (Nível 5):</strong> Dano em área com chance de congelar</li>
+            </ul>
+            
+            <h4>Progressão do Mago</h4>
+            <table>
+                <tr>
+                    <th>Nível</th>
+                    <th>Habilidade Desbloqueada</th>
+                    <th>Bônus de Atributo</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Bola de Fogo</td>
+                    <td>+2 Inteligência</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Escudo Arcano</td>
+                    <td>+1 Inteligência, +1 Sabedoria</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Nevasca</td>
+                    <td>+2 Inteligência</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>Mestre dos Elementos</td>
+                    <td>+3 Inteligência, +1 Sabedoria</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>Sistema de Evolução</h2>
+        
+        <h3>Atributos Básicos</h3>
+        <ul>
+            <li><strong>Força:</strong> Ataque físico e capacidade de carga</li>
+            <li><strong>Destreza:</strong> Velocidade de ataque e esquiva</li>
+            <li><strong>Constituição:</strong> Vida e resistência</li>
+            <li><strong>Inteligência:</strong> Poder mágico e conhecimento</li>
+            <li><strong>Sabedoria:</strong> Resistência mágica e percepção</li>
+        </ul>
+        
+        <h3>Progressão de Nível</h3>
+        <table>
+            <tr>
+                <th>Nível</th>
+                <th>XP Necessário</th>
+                <th>Bônus</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>100</td>
+                <td>+2 pontos de atributo</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>250</td>
+                <td>+1 habilidade de classe</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>700</td>
+                <td>+3 pontos de atributo, +1 habilidade especial</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>3000</td>
+                <td>+5 pontos de atributo, habilidade única</td>
+            </tr>
+        </table>
+        
+        <h3>Fórmula de XP</h3>
+        <p>XP necessário para o próximo nível = (Nível atual × 100) + (Nível atual² × 50)</p>
+        <p>Exemplo: Nível 3 → (3 × 100) + (9 × 50) = 300 + 450 = 750 XP</p>
+    </div>
+    
+    <div class="section">
+        <h2>Criador de Personagem</h2>
+        
+        <div class="character-sheet">
+            <div>
+                <h3>Informações Básicas</h3>
+                <p><strong>Nome:</strong> <input type="text" id="charName"></p>
+                
+                <h3>Raça</h3>
+                <select id="charRace">
+                    <option value="human">Humano</option>
+                    <option value="elf">Elfo</option>
+                    <option value="dwarf">Anão</option>
+                    <option value="orc">Orc</option>
+                </select>
+                
+                <h3>Classe</h3>
+                <select id="charClass">
+                    <option value="warrior">Guerreiro</option>
+                    <option value="mage">Mago</option>
+                </select>
+            </div>
+            
+            <div>
+                <h3>Atributos</h3>
+                <p><strong>Força:</strong> <span id="strVal">5</span></p>
+                <p><strong>Destreza:</strong> <span id="dexVal">5</span></p>
+                <p><strong>Constituição:</strong> <span id="conVal">5</span></p>
+                <p><strong>Inteligência:</strong> <span id="intVal">5</span></p>
+                <p><strong>Sabedoria:</strong> <span id="wisVal">5</span></p>
+                
+                <button onclick="createCharacter()">Criar Personagem</button>
+            </div>
+        </div>
+        
+        <div id="charResult" style="margin-top: 20px; display: none;">
+            <h3>Seu Personagem</h3>
+            <p id="charSummary"></p>
+            <h4>Habilidades Iniciais</h4>
+            <ul id="charAbilities"></ul>
+        </div>
+    </div>
+    
+    <script>
+        function createCharacter() {
+            const name = document.getElementById('charName').value || 'Herói Sem Nome';
+            const race = document.getElementById('charRace').value;
+            const charClass = document.getElementById('charClass').value;
+            
+            // Atributos base
+            let attributes = {
+                str: 5,
+                dex: 5,
+                con: 5,
+                int: 5,
+                wis: 5
+            };
+            
+            // Aplicar bônus raciais
+            switch(race) {
+                case 'human':
+                    attributes.str += 1;
+                    attributes.dex += 1;
+                    attributes.con += 1;
+                    attributes.int += 1;
+                    attributes.wis += 1;
+                    break;
+                case 'elf':
+                    attributes.dex += 2;
+                    attributes.int += 1;
+                    break;
+                case 'dwarf':
+                    attributes.con += 2;
+                    attributes.str += 1;
+                    break;
+                case 'orc':
+                    attributes.str += 3;
+                    attributes.int -= 1;
+                    break;
+            }
+            
+            // Aplicar bônus de classe
+            if(charClass === 'warrior') {
+                attributes.str += 2;
+                attributes.con += 1;
+            } else {
+                attributes.int += 2;
+                attributes.wis += 1;
+            }
+            
+            // Atualizar display
+            document.getElementById('strVal').textContent = attributes.str;
+            document.getElementById('dexVal').textContent = attributes.dex;
+            document.getElementById('conVal').textContent = attributes.con;
+            document.getElementById('intVal').textContent = attributes.int;
+            document.getElementById('wisVal').textContent = attributes.wis;
+            
+            // Mostrar resultado
+            const raceNames = {
+                human: 'Humano',
+                elf: 'Elfo',
+                dwarf: 'Anão',
+                orc: 'Orc'
+            };
+            
+            const classNames = {
+                warrior: 'Guerreiro',
+                mage: 'Mago'
+            };
+            
+            document.getElementById('charSummary').innerHTML = `
+                <strong>${name}</strong><br>
+                ${raceNames[race]} ${classNames[charClass]}<br>
+                Nível 1 (0/100 XP)
+            `;
+            
+            const abilitiesList = document.getElementById('charAbilities');
+            abilitiesList.innerHTML = '';
+            
+            if(charClass === 'warrior') {
+                abilitiesList.innerHTML += '<li>Investida: Ataque poderoso com chance de atordoar</li>';
+            } else {
+                abilitiesList.innerHTML += '<li>Bola de Fogo: Ataque mágico de fogo</li>';
+            }
+            
+            // Habilidades raciais
+            switch(race) {
+                case 'human':
+                    abilitiesList.innerHTML += '<li>Versatilidade: +10% XP em todas as missões</li>';
+                    break;
+                case 'elf':
+                    abilitiesList.innerHTML += '<li>Visão Noturna: +20% bônus em missões noturnas</li>';
+                    break;
+                case 'dwarf':
+                    abilitiesList.innerHTML += '<li>Resistência: 25% menos dano físico</li>';
+                    break;
+                case 'orc':
+                    abilitiesList.innerHTML += '<li>Fúria: +15% dano quando abaixo de 50% vida</li>';
+                    break;
+            }
+            
+            document.getElementById('charResult').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
